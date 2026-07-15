@@ -242,16 +242,16 @@ h2 {
   overflow: hidden;
   position: relative;
   display: inline-block;
+  vertical-align: bottom;
 }
 
-.reveal-text {
-  display: inline-block;
-  transform: translateY(105%);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-active {
-  transform: translateY(0);
+@keyframes slideUpReveal {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Page transitions */
