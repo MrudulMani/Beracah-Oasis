@@ -245,12 +245,6 @@ h2 {
   vertical-align: bottom;
 }
 
-.reveal-text-anim {
-  display: inline-block;
-  transform: translateY(105%);
-  animation: slideUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 @keyframes slideUpReveal {
   from {
     transform: translateY(105%);

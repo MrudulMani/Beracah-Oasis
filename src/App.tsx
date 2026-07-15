@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import SpineCanvas from './components/SpineCanvas';
-import TextReveal from './components/TextReveal';
 import { 
   MapPin, Phone, Clock, ShieldCheck, 
   ArrowRight, Calendar, Activity, Check, Compass, Dumbbell, 
@@ -93,12 +92,23 @@ export const App: React.FC = () => {
         <div className="hero-content">
           <div className="hero-subtitle">
             <span className="inline-block w-2 h-2 rounded-full bg-pink-500 mr-2"></span>
-            Oasis of Clinical Healing
+            Oasis of Clinical Healing & Rehabilitation
           </div>
           <h1 className="hero-title">
-            <TextReveal text="Advanced Physiotherapy." /><br />
-            <TextReveal text="Restore Your Movement." delay={300} />
+            Advanced <span style={{ color: 'var(--primary-blue)' }}>Physiotherapy</span>.<br />
+            <span style={{ color: 'var(--primary-pink)' }}>Restore Your Movement.</span>
           </h1>
+          
+          {/* Biomechanical Insight Box */}
+          <div className="glass-panel" style={{ padding: '16px', margin: '20px 0', borderLeft: '4px solid var(--primary-pink)', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.02)' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary-pink)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+              Biomechanical Insight
+            </span>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.45' }}>
+              Musculoskeletal pain is frequently a result of joint compensation and motor control dysfunction. Our evidence-based treatments isolate restricted movement vectors, restoring optimal structural alignment and neuromuscular activation.
+            </p>
+          </div>
+
           <p className="hero-desc">
             Experience world-class, professional physiotherapy care at Beracah Oasis. 
             We specialize in advanced orthopedic spine recovery, athletic sports rehabilitation, and localized pain management across 3 Bangalore locations.
