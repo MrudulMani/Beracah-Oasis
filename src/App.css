@@ -79,10 +79,10 @@
 
 .hero-subtitle {
   color: var(--primary-pink);
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   margin-bottom: 12px;
   display: flex;
   align-items: center;

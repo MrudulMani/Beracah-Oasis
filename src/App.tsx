@@ -96,8 +96,8 @@ export const App: React.FC = () => {
             Oasis of Clinical Healing
           </div>
           <h1 className="hero-title">
-            <TextReveal text="Restore Movement." /><br />
-            <TextReveal text="Reclaim Vitality." delay={300} />
+            <TextReveal text="Advanced Physiotherapy." /><br />
+            <TextReveal text="Restore Your Movement." delay={300} />
           </h1>
           <p className="hero-desc">
             Experience world-class, professional physiotherapy care at Beracah Oasis. 
