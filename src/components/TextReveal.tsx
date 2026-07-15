@@ -29,9 +29,6 @@ export const TextReveal: React.FC<TextRevealProps> = ({
           <span
             className={`reveal-text-anim ${wordClassName}`}
             style={{
-              display: 'inline-block',
-              transform: 'translateY(105%)',
-              animation: 'slideUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
               animationDelay: `${delay + index * 60}ms`,
             }}
           >
