@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import SpineCanvas from './components/SpineCanvas';
 import TextReveal from './components/TextReveal';
 import { 
-  MapPin, Phone, Clock, Award, ShieldCheck, 
+  MapPin, Phone, Clock, ShieldCheck, 
   ArrowRight, Calendar, Activity, Check, Compass, Dumbbell, 
   AlertTriangle, CheckCircle, ChevronRight, Stethoscope 
 } from 'lucide-react';
@@ -84,9 +84,10 @@ export const App: React.FC = () => {
     setIsBooked(false);
   };
 
-  // 1. HOME PAGE RENDERER
+  // 1. HOME PAGE RENDERER (Summary of all pages)
   const renderHome = () => (
     <div className="container">
+      {/* Hero Header */}
       <div className="hero-section grid-2">
         {/* Left Copy */}
         <div className="hero-content">
@@ -157,75 +158,165 @@ export const App: React.FC = () => {
           <div className="diagnostic-default">
             <Stethoscope className="w-12 h-12 text-slate-500 mb-4 animate-bounce" />
             <p>Hover over the vertebrae segments of the 3D Spine above</p>
-            <span>Discover spinal dynamics, associated symptoms, and tailored physiotherapy treatments.</span>
+            <span>Discover spinal dynamics, associated symptoms, and rehabilitation plans.</span>
           </div>
         )}
       </div>
 
-      {/* Specialized Services */}
-      <div className="section">
-        <div className="section-title">
-          <h2>Specialized Clinical Offerings</h2>
-          <p>We treat a broad spectrum of neuromuscular and skeletal disorders with targeted, evidence-based physical therapies.</p>
-        </div>
-
-        <div className="grid-3">
-          <div className="glass-panel pillar-card glow-blue">
-            <div className="pillar-icon">
-              <Award className="w-6 h-6" />
-            </div>
-            <h3>Orthopedic Therapy</h3>
-            <p>
-              Focused recovery protocols for spinal disc herniations, osteoarthritis, mechanical low back pain, frozen shoulder, and complex post-surgical rehabilitation. We rebuild structural joint mobility and skeletal alignment.
+      {/* 1. About Us Summary Section */}
+      <div className="section" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '64px' }}>
+        <div className="grid-2">
+          <div className="about-text-block">
+            <div className="hero-subtitle">01 / About Us</div>
+            <h3 style={{ color: 'white', fontSize: '2rem', marginBottom: '16px' }}>Our Healing Philosophy</h3>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+              Founded with the vision to create a sanctuary of healing for individuals suffering from chronic pain and joint limitations, Beracah Oasis blends advanced physical therapies with hands-on manual adjustments. Our protocols are evidence-guided and customized for every single body.
             </p>
+            <button 
+              onClick={() => setActiveTab('about')}
+              className="btn-secondary"
+              style={{ marginTop: '16px' }}
+            >
+              Read Our Full Story
+              <ChevronRight className="w-4 h-4 text-pink-400" />
+            </button>
           </div>
-
-          <div className="glass-panel pillar-card glow-pink">
-            <div className="pillar-icon">
-              <Dumbbell className="w-6 h-6" />
+          <div className="about-stats-block" style={{ paddingLeft: '32px' }}>
+            <div className="stat-item">
+              <div className="stat-value">14+</div>
+              <div className="stat-label">
+                <h4>Years Experience</h4>
+                <p>Advanced spine and muscle care.</p>
+              </div>
             </div>
-            <h3>Sports Rehabilitation</h3>
-            <p>
-              Comprehensive care plans for athletic ligament tears (ACL/MCL/Meniscus), tendonitis, rotator cuff injuries, and joint sprains. Features gait analysis, posture correction, and tailored return-to-play training.
-            </p>
-          </div>
-
-          <div className="glass-panel pillar-card glow-blue">
-            <div className="pillar-icon">
-              <Compass className="w-6 h-6" />
+            <div className="stat-item">
+              <div className="stat-value">15k+</div>
+              <div className="stat-label">
+                <h4>Successful Recoveries</h4>
+                <p>Restored structural joint mobility.</p>
+              </div>
             </div>
-            <h3>Neurological Care</h3>
-            <p>
-              Expert physical rehabilitation for post-stroke recovery, Parkinson's disease mobility assistance, vestibular balance retraining, and chronic nerve compression syndromes (e.g. sciatica, carpal tunnel).
-            </p>
           </div>
         </div>
       </div>
 
-      {/* Why Choose Us Section */}
-      <div className="diagnostic-hub" style={{ marginTop: '0px', marginBottom: '80px' }}>
-        <h3 style={{ textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '20px', textAlign: 'center' }}>
-          Why Beracah Oasis?
-        </h3>
-        <div className="grid-2" style={{ gap: '32px', alignItems: 'flex-start' }}>
-          <div>
-            <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '12px' }}>Personalized Patient Pathways</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
-              Unlike commercial centers that offer template exercise sheets, our treatment maps are individual. We coordinate with your orthopedic surgeons to review scan histories, checking joint biomechanics first.
-            </p>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-              Our therapists stay by your side during the entire execution of your clinic plan, checking angles and posture loads to prevent training injuries.
-            </p>
+      {/* 2. Our Doctors Summary Section */}
+      <div className="section" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '64px' }}>
+        <div className="section-title">
+          <div className="hero-subtitle" style={{ justifyContent: 'center' }}>02 / Our Doctors</div>
+          <h2>Our Specialist Council</h2>
+          <p>Learn more about our clinical team of board-certified physiotherapists.</p>
+        </div>
+        <div className="grid-3" style={{ marginBottom: '32px' }}>
+          <div className="glass-panel pillar-card" style={{ padding: '24px', textAlign: 'center' }}>
+            <h4 style={{ color: 'white', fontSize: '1.15rem', marginBottom: '4px' }}>Dr. Avanthi Prabhakar</h4>
+            <span style={{ fontSize: '0.7rem', color: 'var(--primary-pink)', fontWeight: '700', textTransform: 'uppercase' }}>Spine Care Lead</span>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '8px' }}>14+ years experience in joint adjustments and manual traction.</p>
+          </div>
+          <div className="glass-panel pillar-card" style={{ padding: '24px', textAlign: 'center' }}>
+            <h4 style={{ color: 'white', fontSize: '1.15rem', marginBottom: '4px' }}>Dr. Rajesh Kumar</h4>
+            <span style={{ fontSize: '0.7rem', color: 'var(--primary-blue)', fontWeight: '700', textTransform: 'uppercase' }}>Sports Rehab Lead</span>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '8px' }}>Expert in kinesio taping and running gait performance correction.</p>
+          </div>
+          <div className="glass-panel pillar-card" style={{ padding: '24px', textAlign: 'center' }}>
+            <h4 style={{ color: 'white', fontSize: '1.15rem', marginBottom: '4px' }}>Dr. Sarah Alva</h4>
+            <span style={{ fontSize: '0.7rem', color: 'var(--primary-pink)', fontWeight: '700', textTransform: 'uppercase' }}>Neurological Lead</span>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '8px' }}>Specialist in stroke recovery, balance therapy, and pediatric motor care.</p>
+          </div>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <button 
+            onClick={() => setActiveTab('doctors')}
+            className="btn-secondary"
+          >
+            Meet Our Specialists
+            <ChevronRight className="w-4 h-4 text-pink-400" />
+          </button>
+        </div>
+      </div>
+
+      {/* 3. Awareness Summary Section */}
+      <div className="section" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '64px' }}>
+        <div className="grid-2">
+          <div className="posture-figure-wrapper" style={{ height: '280px' }}>
+            <svg width="150" height="230" viewBox="0 0 200 300">
+              <line x1="20" y1="280" x2="180" y2="280" stroke="rgba(255,255,255,0.1)" strokeWidth="4" />
+              <path d="M 80 230 C 70 200, 75 160, 95 130 C 110 110, 115 105, 125 100" fill="none" stroke="url(#pinkGradientHome)" strokeWidth="8" strokeLinecap="round" />
+              <circle cx="132" cy="78" r="18" fill="var(--bg-dark)" stroke="url(#pinkGradientHome)" strokeWidth="4" />
+              <defs>
+                <linearGradient id="pinkGradientHome" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f43f5e" />
+                  <stop offset="100%" stopColor="#ec4899" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
           <div>
-            <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '12px' }}>Continuous Progression Tracking</h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
-              We register your baseline flexibility and muscle recruitment patterns during session one. Every fifth appointment triggers a review scan to chart your improvements.
+            <div className="hero-subtitle">03 / Awareness</div>
+            <h3 style={{ color: 'white', fontSize: '2rem', marginBottom: '16px' }}>Biomechanical Posture Health</h3>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
+              Slouching forward by 60° places an equivalent load of 27kg on your cervical spine. Modern desk habits cause muscles in the chest and neck to tighten, while weakening the upper back. Learn stretches to relieve text neck and build spinal support.
             </p>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-              Our clinicians adjust parameters (traction weights, needling depth, exercises) in real time to guarantee progress and prevent adaptation plateaus.
-            </p>
+            <button 
+              onClick={() => setActiveTab('awareness')}
+              className="btn-secondary"
+            >
+              Test Your Posture
+              <ChevronRight className="w-4 h-4 text-pink-400" />
+            </button>
           </div>
+        </div>
+      </div>
+
+      {/* 4. Branches Summary Section */}
+      <div className="section" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '64px' }}>
+        <div className="grid-2">
+          <div>
+            <div className="hero-subtitle">04 / Branches</div>
+            <h3 style={{ color: 'white', fontSize: '2rem', marginBottom: '16px' }}>Our Clinics Near You</h3>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
+              We operate three clinical locations in Bangalore, each configured to handle specific diagnoses. AECS Layout focuses on mechanical spine traction, Thubarahalli houses sports conditioning equipment, and KR Puram is built for neurological recovery.
+            </p>
+            <button 
+              onClick={() => setActiveTab('branches')}
+              className="btn-secondary"
+            >
+              Explore Our Branches
+              <ChevronRight className="w-4 h-4 text-pink-400" />
+            </button>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className="glass-panel" style={{ padding: '16px', borderRadius: '12px' }}>
+              <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px' }}>AECS Layout (ITPL Main Road)</h4>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Main spine care center opposite Coffee Day.</p>
+            </div>
+            <div className="glass-panel" style={{ padding: '16px', borderRadius: '12px' }}>
+              <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px' }}>Thubarahalli (Sai Baba Temple Road)</h4>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Sports rehabilitation facility with functional gait turf.</p>
+            </div>
+            <div className="glass-panel" style={{ padding: '16px', borderRadius: '12px' }}>
+              <h4 style={{ color: 'white', fontSize: '0.95rem', marginBottom: '4px' }}>Ayyappa Nagar (KR Puram)</h4>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Neurological rehabilitation focus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. Booking & Contact Summary Section */}
+      <div className="section" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '64px', marginBottom: '80px' }}>
+        <div className="glass-panel p-8" style={{ textAlign: 'center', padding: '48px 32px' }}>
+          <div className="hero-subtitle" style={{ justifyContent: 'center' }}>05 / Booking & Contact</div>
+          <h2 style={{ fontSize: '2.25rem', color: 'white', marginBottom: '16px' }}>Ready to Start Your Recovery?</h2>
+          <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 28px auto', lineHeight: '1.6' }}>
+            Request an appointment with our specialist council. Fill in your symptoms, preferred branch, and date. We will coordinate details and confirm your slot.
+          </p>
+          <button 
+            onClick={() => setActiveTab('booking-contact')}
+            className="btn-primary"
+          >
+            <Calendar className="w-5 h-5" />
+            Book Your Clinical Slot
+          </button>
         </div>
       </div>
     </div>
